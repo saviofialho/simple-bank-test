@@ -23,7 +23,7 @@ export default function Home() {
           <div className="border-b-4 border-gray-400 pb-4">
             <h3 className="text-sm uppercase text-gray-600">Acessos Rápidos</h3>
           </div>
-          <ul className="mt-6 flex justify-center gap-8">
+          <ul className="mt-6 flex flex-wrap justify-center gap-8">
             <li>
               <a href="#" className="flex flex-col items-center justify-center">
                 <DollarSign height={40} width={40} className="text-[#F68C23]" />
