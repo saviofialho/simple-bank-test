@@ -10,9 +10,9 @@ const valueFormatter = (number) =>
 export default function Home() {
   return (
     <main className="mx-auto min-h-screen max-w-[1440px] bg-gray-50 px-5 py-10">
-      <div className="grid grid-cols-3 gap-x-8 gap-y-16">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 md:grid-cols-3">
         {/* SALDOS */}
-        <div className="col-span-2">
+        <div className="col-span-1 md:col-span-2">
           <div className="border-b-4 border-gray-400 pb-4">
             <h3 className="text-sm uppercase text-gray-600">Saldos</h3>
           </div>
