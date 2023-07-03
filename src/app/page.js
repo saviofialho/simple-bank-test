@@ -1,5 +1,11 @@
-import { Badge, DatePicker, DateRangePickerItem, Icon } from "@tremor/react";
+"use client";
+
+import { Badge, DatePicker, DonutChart } from "@tremor/react";
 import BalancaTable from "./components/BalanceTable";
+import { ArrowRightLeft, DollarSign, List, Tag } from "lucide-react";
+
+const valueFormatter = (number) =>
+  `$ ${Intl.NumberFormat("us").format(number).toString()}`;
 
 export default function Home() {
   return (
@@ -17,6 +23,36 @@ export default function Home() {
           <div className="border-b-4 border-gray-400 pb-4">
             <h3 className="text-sm uppercase text-gray-600">Acessos Rápidos</h3>
           </div>
+          <ul className="mt-6 flex justify-center gap-8">
+            <li>
+              <a href="#" className="flex flex-col items-center justify-center">
+                <DollarSign height={40} width={40} className="text-[#F68C23]" />
+                <p className="text-[#F68C23]">Contas</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-col items-center justify-center">
+                <ArrowRightLeft
+                  height={40}
+                  width={40}
+                  className="text-[#F68C23]"
+                />
+                <p className="text-[#F68C23]">Movimentos</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-col items-center justify-center">
+                <List height={40} width={40} className="text-[#F68C23]" />
+                <p className="text-[#F68C23]">Operações</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-col items-center justify-center">
+                <Tag height={40} width={40} className="text-[#F68C23]" />
+                <p className="text-[#F68C23]">NIB / IBAN</p>
+              </a>
+            </li>
+          </ul>
         </div>
         {/* OPERAÇÔES PENDENTES */}
         <div>
@@ -118,6 +154,30 @@ export default function Home() {
               </a>
             </li>
           </ul>
+        </div>
+        {/* PATRIMÔNIO */}
+        <div>
+          <div className="border-b-4 border-gray-400 pb-4">
+            <h3 className="text-sm uppercase text-gray-600">Patrimônio</h3>
+          </div>
+          <div className="mt-6">
+            <DonutChart
+              data={[
+                {
+                  name: "Carteira de Títulos",
+                  sales: 9800,
+                },
+                {
+                  name: "Créditos",
+                  sales: 4567,
+                },
+              ]}
+              category="sales"
+              index="name"
+              valueFormatter={valueFormatter}
+              colors={["orange", "blue"]}
+            />
+          </div>
         </div>
       </div>
     </main>
