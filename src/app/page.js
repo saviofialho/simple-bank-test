@@ -9,19 +9,23 @@ const valueFormatter = (number) =>
 
 export default function Home() {
   return (
-    <main className="mx-auto min-h-screen max-w-[1440px] bg-gray-50 px-5 py-10">
+    <main className="mx-auto min-h-screen max-w-[1440px] bg-tremor-background-muted px-5 py-10 dark:bg-dark-tremor-background-muted">
       <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 md:grid-cols-3">
         {/* SALDOS */}
         <div className="col-span-1 md:col-span-2">
           <div className="border-b-4 border-gray-400 pb-4">
-            <h3 className="text-sm uppercase text-gray-600">Saldos</h3>
+            <h3 className="text-sm uppercase text-tremor-content-strong dark:text-dark-tremor-content-strong">
+              Saldos
+            </h3>
           </div>
           <BalancaTable />
         </div>
         {/* ACESSOS */}
         <div>
           <div className="border-b-4 border-gray-400 pb-4">
-            <h3 className="text-sm uppercase text-gray-600">Acessos Rápidos</h3>
+            <h3 className="text-sm uppercase text-tremor-content-strong dark:text-dark-tremor-content-strong">
+              Acessos Rápidos
+            </h3>
           </div>
           <ul className="mt-6 flex flex-wrap justify-center gap-8">
             <li>
@@ -57,7 +61,7 @@ export default function Home() {
         {/* OPERAÇÔES PENDENTES */}
         <div>
           <div className="border-b-4 border-gray-400 pb-4">
-            <h3 className="text-sm uppercase text-gray-600">
+            <h3 className="text-sm uppercase text-tremor-content-strong dark:text-dark-tremor-content-strong">
               Operações Pendentes
             </h3>
           </div>
@@ -108,7 +112,7 @@ export default function Home() {
         {/* OPERAÇÔES FREQUENTES */}
         <div>
           <div className="border-b-4 border-gray-400 pb-4">
-            <h3 className="text-sm uppercase text-gray-600">
+            <h3 className="text-sm uppercase text-tremor-content-strong dark:text-dark-tremor-content-strong">
               Operações Frequentes
             </h3>
           </div>
@@ -158,7 +162,9 @@ export default function Home() {
         {/* PATRIMÔNIO */}
         <div>
           <div className="border-b-4 border-gray-400 pb-4">
-            <h3 className="text-sm uppercase text-gray-600">Patrimônio</h3>
+            <h3 className="text-sm uppercase text-tremor-content-strong dark:text-dark-tremor-content-strong">
+              Patrimônio
+            </h3>
           </div>
           <div className="mt-6">
             <DonutChart
